@@ -1,4 +1,5 @@
 import random
+import sys
 from abc import ABC, abstractmethod
 from enum import Enum
 
@@ -123,7 +124,8 @@ def infect(host: Host, virus: Virus) -> Symptom:
 if __name__ == "__main__":
     vrs = [Covid19(), Ebola(), HIV()]
     # Câu 2
-    n = int(input("Nhập số người vào: "))
+    print("Số người test lần 1: ", sys.argv[1])
+    n = int(sys.argv[1])
     hosts: list[Host] = []
     for i in range(n):
         host_id = f"H000{i}"
@@ -137,7 +139,8 @@ if __name__ == "__main__":
     for h in hosts:
         print(h)
     # Câu 4
-    m = int(input("Test lại khi đã tiêm vaccine: "))
+    print("Số người test lần 2: ", sys.argv[2])
+    m = int(sys.argv[2])
     assert m == n
     hosts_: list[Host] = []
     for j in range(m):
