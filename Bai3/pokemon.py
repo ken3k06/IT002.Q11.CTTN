@@ -1,5 +1,5 @@
 import sys
-from zlib import DEF_MEM_LEVEL
+
 
 class Pokemon:
     def __init__(self,name, hp, dmg, element):
